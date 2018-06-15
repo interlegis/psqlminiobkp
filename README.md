@@ -1,5 +1,7 @@
 # psqlminiobkp
-Backup PostgreSQL Database directly to Minio
+Docker container to backup a PostgreSQL database directly to Minio.
+
+Can be used to back up databases periodically with a solution such as rancher-container-crontab. See Rancher catalog sample at https://github.com/interlegis/rancher-il-catalog/tree/master/templates/psqlminbkp
 
 ## Sample docker-compose.yml
 
@@ -20,5 +22,5 @@ services:
 
 ```
 
-IMPORTANT: This image assumes the bucket is used solely for the PostgreSQL backup, and removes files older than KEEP_DAYS after every backup.
+**IMPORTANT**: This image assumes the bucket is used solely for the PostgreSQL backup, and removes files older than KEEP_DAYS after every backup.
 
