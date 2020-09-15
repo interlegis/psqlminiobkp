@@ -15,7 +15,7 @@ pg_dump $ARGS -Fc "$DB" | mc pipe "pg/$ARCHIVE" || { echo "Backup failed"; mc rm
 
 echo "Removing files older than ${KEEP_DAYS} days..."
 
-mc rm -r --force --older-than=${KEEP_DAYS} pg/${MINIO_BUCKET} || { echo "ERROR removing files older than ${KEEP_DAYS} days."; };
+mc rm -r --force --older-than=${KEEP_DAYS}d pg/${MINIO_BUCKET} || { echo "ERROR removing files older than ${KEEP_DAYS} days."; };
 
 echo "Backup complete."
 
